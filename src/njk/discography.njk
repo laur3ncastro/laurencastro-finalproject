@@ -1,13 +1,13 @@
 {% extends '_templates/base.njk' %}
 
-{% block page_title %}Queen Home{% endblock %}
+{% block page_title %}Discography{% endblock %}
 
 {% block page_description %}The index search description for this page goes here.{% endblock %}
 
 {% block content %}
 <div class="jumbotron jumbotron-fluid text-center">
  <div class="jumbotron">
-  <h1 class="display-4">Q u e e n</h1>
+  <h1 class="display-4">Discography</h1>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
   <p class="lead">something about the band here</p>
@@ -16,19 +16,9 @@
 </div>
 </div>
 <div class="container text-center">
-  <h1>"Carry on, carry on, as if nothing really matters..."</h1>
+  <h1>Queen Through The Years</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in facilisis velit, aliquam congue dui. Mauris id mi quam. Nam enim leo, bibendum vel efficitur id, elementum malesuada est. Pellentesque interdum tempus eros nec iaculis. Quisque ac est dictum, vehicula nulla quis, condimentum dui.</p>
-  </div>
-</div>
-<div class="container text-center">
-<h2>Queen: The Members</h2>
-<p>this will have more info</p>
- <div class="row">
-   {% for members in queen.members %}
-      <div class="col">
-        <img src="img/{{ members.slug }}.jpg" alt="" class="img-fluid">
-        <h3><a href="members/{{ members.slug }}.html">{{ members.name }}</a></h3>
-      </div>
-    {% endfor %}
-  </div>
+
+  <h3>{{ queen.discography[0].discography_title }}</h3>
+
 {% endblock %}
