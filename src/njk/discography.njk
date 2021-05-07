@@ -5,20 +5,28 @@
 {% block page_description %}The index search description for this page goes here.{% endblock %}
 
 {% block content %}
-<div class="jumbotron jumbotron-fluid text-center">
- <div class="jumbotron">
+<div class="jumbotron jumbotron-special jumbotron-fluid text-center">
+    <div id="firstJBox">
   <h1 class="display-4">Discography</h1>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-  <p class="lead">something about the band here</p>
+  <p class="lead">A look into the works of the band since 1970</p>
   <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    </div>
 </div>
-</div>
+
 <div class="container text-center">
   <h1>Queen Through The Years</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in facilisis velit, aliquam congue dui. Mauris id mi quam. Nam enim leo, bibendum vel efficitur id, elementum malesuada est. Pellentesque interdum tempus eros nec iaculis. Quisque ac est dictum, vehicula nulla quis, condimentum dui.</p>
+  <p>With 15 studio albums under their belt, Queen accomplished six #1 hits and have provided music for generations to enjoy. </p>
 
-  <h3>{{ queen.discography[0].discography_title }}</h3>
+  <div class="card-columns">
+  {% for disc in queen.discography %}
+  <div class="card">
+    <img src="img/discs/{{ disc.image }}" class="card-img-top" alt="">
+    <div class="card-body">
+    <h5 class="card-title text-center">{{ disc.title }}</h5>
+    <p class="card-text text-center">{{ disc.year }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 
-{% endblock %}
+  {% endblock %}
